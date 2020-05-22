@@ -1,3 +1,7 @@
+server:
+  port: 80
+  path: "/ws"
+
 services:
   youtube:
     enabled: true

@@ -14,6 +14,7 @@ if (!existsSync("configs/config.yml")) {
     log("ERROR", "No config.yml file found in configs/ folder. Create it from the config.example.yml file.")
 }
 
+log("TRACE", "Loading config...")
 
 let configYaml
 try {
