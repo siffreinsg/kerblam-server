@@ -1,6 +1,3 @@
-app:
-  port: 80
-
 services:
   youtube:
     enabled: true

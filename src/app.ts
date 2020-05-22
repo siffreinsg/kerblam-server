@@ -1,3 +1,3 @@
 import { log } from "./helpers/log"
 
-log("INFO", "Booting Kerblam server.")
+log("INFO", "Kerblam server up and running!")
