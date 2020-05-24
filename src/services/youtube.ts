@@ -1,6 +1,6 @@
 import { PlaylistItems, StreamItem, PlaylistItemListResponse, StreamSearchListResponse } from "./../types/youtube"
 import { log } from "./../helpers/log"
-import { config } from "../config"
+import { config } from "../controllers/config"
 import axios, { AxiosResponse, AxiosError } from "axios"
 import { isArray } from "util"
 

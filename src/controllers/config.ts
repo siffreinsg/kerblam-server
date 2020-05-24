@@ -1,7 +1,7 @@
-import { Config } from "./types/config"
-import { log } from "./helpers/log"
+import { Config } from "../types/config"
+import { log } from "../helpers/log"
 import { existsSync, readFileSync } from "fs"
-import {safeLoad} from "js-yaml"
+import { safeLoad } from "js-yaml"
 
 if (typeof process.env.NODE_ENV !== "string" || process.env.NODE_ENV === "") {
     process.env.NODE_ENV = "production"

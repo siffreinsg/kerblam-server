@@ -1,5 +1,5 @@
 import { log } from "./../helpers/log"
-import { config } from "./../config"
+import { config } from "./config"
 import { Server, OPEN } from "ws"
 
 export const server = new Server({
@@ -8,9 +8,7 @@ export const server = new Server({
     clientTracking: true
 })
 
-export const address = JSON.stringify(server.address())
-
-server.on("listening", () => log("TRACE", `(WS) Websocket server listening on ${address}`))
+server.on("listening", () => log("TRACE", `(WS) Listening on ${config.server.port}.`))
 server.on("connection", (client, req) => {
     log("TRACE", `(WS) New client connected on ${req.connection.remoteAddress}.`)
 })
