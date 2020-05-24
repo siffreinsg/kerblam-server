@@ -107,3 +107,4 @@ dist
 configs/*
 !configs/config.example.yml
 build
+KerblamDB.json

@@ -6,3 +6,8 @@ services:
   youtube:
     enabled: true
     apiKey: ""
+  twitch:
+    enabled: true
+    clientId: ""
+    clientSecret: ""
+    accessToken: ""
