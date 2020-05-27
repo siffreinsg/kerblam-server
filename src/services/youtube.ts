@@ -4,13 +4,17 @@ import { config } from "../controllers/config"
 import axios, { AxiosResponse, AxiosError } from "axios"
 import { isArray } from "util"
 
-if (config.services.youtube.enabled && (typeof config.services.youtube.apiKey !== "string" || !isArray(config.services.youtube.apiKey)))
+if (config.services.twitch.enabled)
+    log("INFO", "Youtube service enabled.")
+
+if (config.services.youtube.enabled && (typeof config.services.youtube.apiKeys !== "string" || !isArray(config.services.youtube.apiKeys)))
     log("ERROR", "YouTube service is enabled but API key is not valid. Disable the service or verify API key.")
 
-const apiKeys: string[] = []
 
-const randomApiKey = (): string => {
-    return apiKeys[Math.floor((Math.random() * apiKeys.length))]
+const getApiKey = (): string => {
+    if (typeof config.services.youtube.apiKeys === "string")
+        return config.services.youtube.apiKeys
+    return config.services.youtube.apiKeys[Math.floor((Math.random() * config.services.youtube.apiKeys.length))]
 }
 
 export const getPlaylistItems = (playlistId: string): Promise<PlaylistItems[]> => {
@@ -23,7 +27,7 @@ export const getPlaylistItems = (playlistId: string): Promise<PlaylistItems[]> =
             params: {
                 part: "snippet",
                 playlistId,
-                key: randomApiKey(),
+                key: getApiKey(),
                 maxResults: 50
             },
             responseType: "json",
@@ -51,7 +55,7 @@ export const getStream = (channelId: string): Promise<StreamItem | undefined> =>
             params: {
                 part: "snippet",
                 channelId,
-                key: randomApiKey(),
+                key: getApiKey(),
                 type: "video",
                 eventType: "live",
                 maxResults: 1,

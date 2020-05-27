@@ -5,6 +5,9 @@ import { Stream, Game } from "../types/twitch"
 import { isArray, inspect } from "util"
 import { log } from "../helpers/log"
 
+if (config.services.twitch.enabled)
+    log("INFO", "Twitch service enabled.")
+
 if (config.services.twitch.enabled && (typeof config.services.twitch.clientId !== "string" || typeof config.services.twitch.clientSecret !== "string"))
     log("ERROR", "Twitch service is enabled but client id or secret has not been provided. Disable the service or verify the config.")
 
@@ -89,7 +92,7 @@ export async function getStream(channels: string | string[], cursor?: string): P
     })
 }
 
-export async function getGame(games: string | string[]): Promise<Game> {
+export async function getGame(games: string | string[]): Promise<Game[]> {
     return new Promise((resolve, reject) => {
         if (isArray(games) && games.length > 100)
             throw new Error("TOO_MUCH_GAMES")

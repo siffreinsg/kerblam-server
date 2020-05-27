@@ -43,6 +43,27 @@
         "semi": [
             "error",
             "never"
+        ],
+        "no-multi-spaces": [
+            "error",
+            {
+                "ignoreEOLComments": true
+            }
+        ],
+        "space-in-parens": [
+            "error",
+            "never"
+        ],
+        "array-bracket-spacing": [
+            "error",
+            "never",
+            {
+                "singleValue": true
+            }
+        ],
+        "object-curly-spacing": [
+            "error",
+            "always"
         ]
     }
 }

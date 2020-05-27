@@ -5,7 +5,7 @@ server:
 services:
   youtube:
     enabled: true
-    apiKey: ""
+    apiKeys: ""
   twitch:
     enabled: true
     clientId: ""

@@ -6,7 +6,7 @@ export interface Config {
     services: {
         youtube: {
             enabled: boolean;
-            apiKey: string | string[];
+            apiKeys: string | string[];
         };
         twitch: {
             enabled: boolean;
