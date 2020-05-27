@@ -1,0 +1,13 @@
+channelId:
+  activated: true
+  displayName: Channel Name
+  socials:
+    youtube: "https://youtube.com/user/"
+    twitch: "https://twitch.tv/"
+    facebook: "https://facebook.com/"
+    twitter: "https://twitter.com/"
+    instagram: "https://instagram.com/"
+  ids:
+    youtube: ""
+    twitch: ""
+  streamOrigin: "twitch"

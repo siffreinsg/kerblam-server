@@ -16,3 +16,16 @@ export interface Config {
         };
     };
 }
+
+export interface Channel {
+    activated: boolean;
+    displayName: string;
+    socials: {
+        [ key: string ]: string;
+    };
+    ids: {
+        youtube: string;
+        twitch: string;
+    };
+    streamOrigin: keyof Channel["ids"];
+}

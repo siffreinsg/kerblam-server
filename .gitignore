@@ -106,5 +106,6 @@ dist
 
 configs/*
 !configs/config.example.yml
+!configs/channels.example.yml
 build
 KerblamDB.json
